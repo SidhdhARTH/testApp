@@ -1,10 +1,10 @@
 /*
  * 	An implementation of Server Socket for Client-Server communications
  *
- *	Program Name: server.c
+ *	Program Name    : server.c
  * 	Description	: Implementation of server socket
- *  Date		: 01-05-2018
- *  Author		: SIDHDHARTH YADAV
+ *  	Date		: 01-05-2018
+ * 	Author		: SIDHDHARTH YADAV
  *
  */
 
@@ -45,16 +45,15 @@ int main()
 	{
 		char c;
 		int fd;
-		int nread;
 		testfds = readfds;
 		
-		printf("Server is Waiting for Client\n");
+		printf("Server is waiting for Client\n");
 
 		result = select(FD_SETSIZE,&testfds,(fd_set *)0,(fd_set *)0,(struct timeval *)0);
 
 		if(result < 1)
 		{
-			perror("server failed initializing");
+			perror("Server failed initializing");
 			exit(1);
 		}
 		
@@ -67,7 +66,7 @@ int main()
 					client_len = sizeof(client_address);
 					client_sockfd = accept(server_sockfd,(struct sockaddr *)&client_address,&client_len);
 					FD_SET(client_sockfd, &readfds);
-					printf("Adding Client on fd %d\n", client_sockfd);
+					printf("Adding client on fd %d\n", client_sockfd);
 				}
 				else
 				{
