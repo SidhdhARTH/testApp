@@ -1,2 +1,2 @@
 # testApp
-This repo shows information about Linux Application running on Linux System.
+This repo shows implementation file for Server Application running on Linux System.
